@@ -4,11 +4,14 @@ import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
 import "./styles/Navbar.css";
+import { useLanguage } from "../context/LanguageContext";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
 
 const Navbar = () => {
+  const { lang, toggle, t } = useLanguage();
+
   useEffect(() => {
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
@@ -39,34 +42,47 @@ const Navbar = () => {
       ScrollSmoother.refresh(true);
     });
   }, []);
+
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          RC
+          JV
         </a>
         <a
-          href="mailto:rajeshchittyal21@gmail.com"
+          href="mailto:jayrampriyansh@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          rajeshchittyal21@gmail.com
+          jayrampriyansh@gmail.com
         </a>
         <ul>
           <li>
             <a data-href="#about" href="#about">
-              <HoverLinks text="ABOUT" />
+              <HoverLinks text={t("navAbout")} />
             </a>
           </li>
           <li>
             <a data-href="#work" href="#work">
-              <HoverLinks text="WORK" />
+              <HoverLinks text={t("navWork")} />
             </a>
           </li>
           <li>
             <a data-href="#contact" href="#contact">
-              <HoverLinks text="CONTACT" />
+              <HoverLinks text={t("navContact")} />
             </a>
+          </li>
+          <li>
+            <button
+              className="lang-toggle"
+              onClick={toggle}
+              data-cursor="disable"
+              aria-label="Toggle language"
+            >
+              <span className={lang === "en" ? "lang-active" : ""}>EN</span>
+              <span className="lang-sep">|</span>
+              <span className={lang === "jp" ? "lang-active" : ""}>JP</span>
+            </button>
           </li>
         </ul>
       </div>

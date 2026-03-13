@@ -12,6 +12,7 @@
   top: 0;
   z-index: 9999;
 }
+
 .header ul {
   font-size: 12px;
   display: flex;
@@ -23,6 +24,7 @@
   row-gap: 8px;
   align-items: end;
 }
+
 .header ul li {
   margin-left: 0px;
   letter-spacing: 1px;
@@ -30,6 +32,7 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 .navbar-connect {
   position: absolute;
   display: none;
@@ -40,44 +43,102 @@
   letter-spacing: 1px;
   font-weight: 500;
 }
+
 .navbar-title {
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.2px;
 }
+
 @media only screen and (min-width: 500px) {
   .header {
     padding: 20px 0px;
   }
+
   .header ul {
     flex-direction: row;
     align-items: center;
     font-size: 14px;
   }
+
   .header ul li {
     color: #eae5ec;
   }
+
   .navbar-title {
     font-size: 16px;
   }
 }
+
 @media only screen and (min-width: 900px) {
   .navbar-connect {
     display: block;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   .header {
     padding: 35px 0px;
   }
+
   .header ul {
     column-gap: 80px;
     font-size: 16px;
   }
+
   .navbar-connect {
     font-size: 16px;
   }
+
   .navbar-title {
     font-size: 18px;
+  }
+}
+
+/* ── Language Toggle ── */
+.lang-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.lang-toggle:hover {
+  border-color: #14b8a6;
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.4);
+  color: #fff;
+}
+
+.lang-sep {
+  opacity: 0.35;
+}
+
+.lang-active {
+  color: #14b8a6;
+  text-shadow: 0 0 6px rgba(20, 184, 166, 0.7);
+}
+
+@media only screen and (min-width: 500px) {
+  .lang-toggle {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .lang-toggle {
+    font-size: 13px;
+    padding: 6px 14px;
   }
 }

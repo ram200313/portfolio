@@ -1,26 +1,29 @@
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
+import RotatingBall from "./RotatingBall";
+import { useLanguage } from "../context/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
-        <h3>Contact</h3>
+        <h3>{t("contactTitle")}</h3>
         <div className="contact-flex">
           <div className="contact-box">
-            <h4>Email</h4>
+            <h4>{t("emailLabel")}</h4>
             <p>
-              <a href="mailto:rajeshchittyal21@gmail.com" data-cursor="disable">
-                rajeshchittyal21@gmail.com
+              <a href="mailto:jayrampriyansh@gmail.com" data-cursor="disable">
+                jayrampriyansh@gmail.com
               </a>
             </p>
-            <h4>Education</h4>
-            <p>BSc in Computer Science</p>
+            <h4>{t("educationLabel")}</h4>
+            <p>{t("educationVal")}</p>
           </div>
           <div className="contact-box">
-            <h4>Social</h4>
+            <h4>{t("socialLabel")}</h4>
             <a
-              href="https://github.com/raxx21"
+              href="https://github.com/ram200313"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -28,39 +31,26 @@ const Contact = () => {
               Github <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com/in/rajesh-chityal-2a70141b3"
+              href="https://www.linkedin.com/in/jay-ram-"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
             >
               Linkedin <MdArrowOutward />
             </a>
-            <a
-              href="https://x.com/raxx21_official"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.instagram.com/therajeshchityal"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Instagram <MdArrowOutward />
-            </a>
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Rajesh Chityal</span>
+              {t("footerCredit")} <br /> {t("footerBy")} <span>Jayaram V</span>
             </h2>
             <h5>
-              <MdCopyright /> 2025
+              <MdCopyright /> 2026
             </h5>
           </div>
         </div>
+
+        {/* Rotating profile photo ball */}
+        <RotatingBall />
       </div>
     </div>
   );
